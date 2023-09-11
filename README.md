@@ -1,2 +1,2 @@
 # TECLMS-TECMIS
-Our university mini project based on database...
+Our university mini project based on database..
