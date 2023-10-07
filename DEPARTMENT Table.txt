@@ -1,0 +1,15 @@
+-----------------------------------------------------------------------------------------------------
+DEPARTMENT TABLE
+-----------------------------------------------------------------------------------------------------
+create table DEPARTMENT (
+	Dep_id CHAR(3) NOT NULL,
+	Name varchar(150) NOT NULL,
+	Lec_id CHAR(5) NOT NULL,
+	PRIMARY KEY (Dep_id)
+);
+
+INSERT INTO DEPARTMENT (Dep_id,Name,Lec_id) VALUES
+    ('D01','Information Ccommunication Technology','LE001'),
+    ('D02','Bio System Technology','LE005'),
+    ('D03','Engeneering Technology','LE003'),
+    ('D04','Multy Dicyplinary','LE004');
