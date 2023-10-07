@@ -1,0 +1,44 @@
+-----------------------------------------------------------------------------------------------------
+DEPARTMENT TABLE
+-----------------------------------------------------------------------------------------------------
+create table DEPARTMENT (
+	Dep_id CHAR(3) NOT NULL,
+	Name varchar(150) NOT NULL,
+	Lec_id CHAR(5) NOT NULL,
+	PRIMARY KEY (Dep_id)
+);
+INSERT INTO DEPARTMENT (Dep_id,Name,Lec_id) VALUES
+    ('D01','Information Ccommunication Technology','LE001'),
+    ('D02','Bio System Technology','LE005'),
+    ('D03','Engeneering Technology','LE003'),
+    ('D04','Multy Dicyplinary','LE004');
+
+-----------------------------------------------------------------------------------------------------
+LECTURE TABLE
+-----------------------------------------------------------------------------------------------------
+create table LECTURE (
+	Lec_id CHAR(5) NOT NULL,
+	Name varchar(250),
+	Email varchar(150),
+	Contact varchar(15),
+	Dep_id CHAR(3) NOT NULL,
+	PRIMARY KEY (Lec_id)
+);
+INSERT INTO LECTURE (Lec_id, Name, Email, Contact, Dep_id) VALUES
+    ('LE001', 'Saman Hewage', 'saman.hewage@example.com', '0123456789', 'D01'),
+    ('LE002', 'Jane Doe', 'janedoe@example.com', '9876543210', 'D02'),
+    ('LE003', 'Michael Johnson', 'michaeljohnson@example.com', '5551234567', 'D03'),
+    ('LE004', 'Emily Brown', 'emilybrown@example.com', '8889876543', 'D04'),
+    ('LE005', 'David Wilson', 'davidwilson@example.com', '7772223333', 'D02'),
+    ('LE006', 'Sarah Lee', 'sarahlee@example.com', '5559998888', 'D02'),
+    ('LE007', 'Robert Davis', 'robertdavis@example.com', '7778885555', 'D03'),
+    ('LE008', 'Jennifer White', 'jenniferwhite@example.com', '1235558888', 'D04'),
+    ('LE009', 'William Adams', 'williamadams@example.com', '5556667777', 'D01'),
+    ('LE010', 'Laura Miller', 'lauramiller@example.com', '6667778888', 'D02'),
+    ('LE011', 'Daniel Taylor', 'danieltaylor@example.com', '7771112222', 'D03'),
+    ('LE012', 'Olivia Martin', 'oliviamartin@example.com', '1112223333', 'D04'),
+    ('LE013', 'James Harris', 'jamesharris@example.com', '2223334444', 'D01'),
+    ('LE014', 'Sophia Clark', 'sophiaclark@example.com', '4445556666', 'D02'),
+    ('LE015', 'Benjamin Lewis', 'benjaminlewis@example.com', '6665554444', 'D03');
+
+
