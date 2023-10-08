@@ -25,20 +25,48 @@ create table LECTURE (
 	PRIMARY KEY (Lec_id)
 );
 INSERT INTO LECTURE (Lec_id, Name, Email, Contact, Dep_id) VALUES
-    ('LE001', 'Saman Hewage', 'saman.hewage@example.com', '0123456789', 'D01'),
-    ('LE002', 'Jane Doe', 'janedoe@example.com', '9876543210', 'D02'),
-    ('LE003', 'Michael Johnson', 'michaeljohnson@example.com', '5551234567', 'D03'),
-    ('LE004', 'Emily Brown', 'emilybrown@example.com', '8889876543', 'D04'),
-    ('LE005', 'David Wilson', 'davidwilson@example.com', '7772223333', 'D02'),
-    ('LE006', 'Sarah Lee', 'sarahlee@example.com', '5559998888', 'D02'),
-    ('LE007', 'Robert Davis', 'robertdavis@example.com', '7778885555', 'D03'),
-    ('LE008', 'Jennifer White', 'jenniferwhite@example.com', '1235558888', 'D04'),
-    ('LE009', 'William Adams', 'williamadams@example.com', '5556667777', 'D01'),
-    ('LE010', 'Laura Miller', 'lauramiller@example.com', '6667778888', 'D02'),
-    ('LE011', 'Daniel Taylor', 'danieltaylor@example.com', '7771112222', 'D03'),
-    ('LE012', 'Olivia Martin', 'oliviamartin@example.com', '1112223333', 'D04'),
-    ('LE013', 'James Harris', 'jamesharris@example.com', '2223334444', 'D01'),
-    ('LE014', 'Sophia Clark', 'sophiaclark@example.com', '4445556666', 'D02'),
-    ('LE015', 'Benjamin Lewis', 'benjaminlewis@example.com', '6665554444', 'D03');
+    ('LE001', 'Saman Hewage', 'saman.hewage@gmail.com', '0123456789', 'D01'),
+    ('LE002', 'Nadee Kelum', 'kelumndee@gmail.com', '9876543210', 'D02'),
+    ('LE003', 'Saraswathi Nadan', 'saraswthinadn@gmail.com', '5551234567', 'D03'),
+    ('LE004', 'Kosala Gunarathna', 'kosalaguna@gmail.com', '8889876543', 'D04'),
+    ('LE005', 'David Wilson', 'davidwilson@gmail.com', '7772223333', 'D02'),
+    ('LE006', 'Suumya Nadeegama', 'saumya@gmail.com', '5559998888', 'D02'),
+    ('LE007', 'Darshana Peeris', 'peerisdn@gmail.com', '7778885555', 'D03'),
+    ('LE008', 'Rasanga Samarathunga', 'samarathunga@gmail.com', '1235558888', 'D04'),
+    ('LE009', 'Wasana Adikaram', 'wasanadikrm@gmail.com', '5556667777', 'D01'),
+    ('LE010', 'Lahiru Gamage', 'lahirugmge@gmail.com', '6667778888', 'D02'),
+    ('LE011', 'Danshka Muthukumara', 'muthukumara@gmail.com', '7771112222', 'D03'),
+    ('LE012', 'Oshan Sandaken', 'oshansandken@gmail.com', '1112223333', 'D04'),
+    ('LE013', 'Janu Arachchi', 'jachchi@example.com', '2223334444', 'D01'),
+    ('LE014', 'Mathisha Rangajeewa', 'rangajeewamthisa@gmail.com', '4445556666', 'D02'),
+    ('LE015', 'Bathiya Kelum', 'bathiyakelum@gmail.com', '6665554444', 'D03');
 
-
+-----------------------------------------------------------------------------------------------------
+LECTURE TABLE
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE course(
+    Crs_id VARCHAR(7) NOT NULL,
+    Name VARCHAR(40) NOT NULL,
+    Type VARCHAR(10) NOT NULL,
+    Credit INT NOT NULL,
+    Dep_id CHAR(3) NOT NULL,
+    Lec_id CHAR(5) NOT NULL,
+    PRIMARY KEY(Crs_id)
+);
+INSERT INTO course (Crs_id,Name,Type,Credit,Dep_id,Lec_id) VALUES
+    ('ICT1222','Network','Both',2,'D01','LE001'),
+    ('ICT1123','WEB','Both',3,'D01','LE009'),
+    ('ICT2112','JAVA','Theory',2,'D01','LE013'),
+    ('ICT2122','JAVA','Practical',2,'D01','LE013'),
+    ('ET1113','POM','Both',3,'D03','LE003'),
+    ('ET1222','C language','Practical',2,'D03','LE007'),
+    ('ET1212','C language','Theory',2,'D03','LE015'),
+    ('ET3112','EM','Both',2,'D03','LE011'),
+    ('BST1123','Organic Chemistry','Both',3,'D02','LE002'),
+    ('BST1222','Fisheries','Both',2,'D02','LE005'),
+    ('BST2131','Agriculture','Both',1,'D02','LE006'),
+    ('BST1233','Microbiology','Theory',3,'D02','LE010'),
+    ('TMS1223','Maths','Theory',3,'D04','LE012'),
+    ('TMS1210','English','Theory',0,'D04','LE004'),
+    ('TMS1222','Management','Theory',2,'D04','LE008'),
+    ('TMS1212','Economics','Theory',2,'D04','LE014');
