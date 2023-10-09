@@ -42,7 +42,7 @@ INSERT INTO LECTURE (Lec_id, Name, Email, Contact, Dep_id) VALUES
     ('LE015', 'Bathiya Kelum', 'bathiyakelum@gmail.com', '6665554444', 'D03');
 
 -----------------------------------------------------------------------------------------------------
-LECTURE TABLE
+course TABLE
 -----------------------------------------------------------------------------------------------------
 CREATE TABLE course(
     Crs_id VARCHAR(7) NOT NULL,
