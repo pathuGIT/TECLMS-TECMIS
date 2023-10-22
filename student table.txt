@@ -33,3 +33,10 @@ INSERT INTO student (Std_id,Name,Email,Contact,NIC,Dep_id,Crs_id)
      ('TG0015','Tharaka hansana','tharaka9@gmail.com','0114090672','199970915672','D04','TMS1222'),
      ('TG0016','Rajitha lakshan','rajitha5@gmail.com','0904783991','200192815081','D04','TMS1212');
 
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0013';
+
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0014';
+
+UPDATE student SET Dep_id='D02' WHERE StD_id='TG0015';
+
+UPDATE student SET Dep_id='D03' WHERE StD_id='TG0016';
