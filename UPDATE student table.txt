@@ -1,0 +1,15 @@
+-----------------------------------------------------------------------------------------------------
+UPDATE STUDENT TABLE
+-----------------------------------------------------------------------------------------------------
+
+
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0013';
+
+
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0014';
+
+
+UPDATE student SET Dep_id='D02' WHERE StD_id='TG0015';
+
+UPDATE student SET Dep_id='D03' WHERE StD_id='TG0016';
+
