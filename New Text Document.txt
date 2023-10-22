@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------------------------
-TABLE course
+	TABLE course
 -------------------------------------------------------------------------------------------------
 
 
@@ -30,5 +30,4 @@ INSERT INTO course (Crs_id,Name,Type,Credit,Dep_id,Lec_id) VALUES
     ('TMS1223','Maths','Theory',3,'D04','LE012'),
     ('TMS1210','English','Theory',0,'D04','LE004'),
     ('TMS1222','Management','Theory',2,'D04','LE008'),
-    ('TMS1212','Economics','Theory',2,'D04','LE014');
     ('TMS1212','Economics','Theory',2,'D04','LE014');
