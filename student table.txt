@@ -1,0 +1,35 @@
+-----------------------------------------------------------------------------------------------------
+STUDENT TABLE
+-----------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE student(
+     Std_id VARCHAR(6) NOT NULL,
+     Name VARCHAR(250),
+     Email VARCHAR(150),
+     Contact VARCHAR(15),
+     NIC VARCHAR(12) NOT NULL,
+     Dep_id CHAR(3) NOT NULL,
+     Crs_id VARCHAR(7) NOT NULL,
+     PRIMARY KEY(Std_id)
+     );
+
+INSERT INTO student (Std_id,Name,Email,Contact,NIC,Dep_id,Crs_id)
+     VALUES
+     ('TG0001','Dinesh kumara','dinesh1@gmail.com','0123456789','199615203041','D01','ICT1222'),
+     ('TG0002','Saman gunasena','saman98@gmail.com','0792030768','199856784551','D01','ICT1123'),
+     ('TG0003','Gayani silva','gayani01@gmail.com','0895678123','199926458901','D01','ICT2112'),
+     ('TG0004','Kalana pathirana','kalana34@gmail.com','0789000234','200022300567','D01','ICT2122'),
+     ('TG0005','Bagya prasadi','bagya45@gmail.com','0993456812','199789013455','D02','BST1123'),
+     ('TG0006','Avishka iduwara','avishka65@gmail.com','0773456781','199034567812','D02','BST1222'),
+     ('TG0007','Anjana rangajeewa','anjana10@gmail.com','0091234675','188956872354','Do2','BST2131'),
+     ('TG0008','Pathum priyadarshana','pathum@gmail.com','0715271000','199826737891','D02','BST1233'),
+     ('TG0009','Ishan kumuditha','ishan2@gmail.com','0093784561','200134568932','D03','ET1113'),
+     ('TG0010','Sanidu piris','sanidu10@gmail.com','0883246571','200021347854','D03','ET1222'),
+     ('TG0011','Ravidu heshan','ravidu5@gmail.com','0873486723','200234871267','D03','ET1212'),
+     ('TG0012','Asela adikari','asela7@gmail.com','0239867548','200146834671','D03','ET3112'),
+     ('TG0013','Sithila ravihara','sithila1@gmail.com','0073485627','200138472901','D04','TMS1123'),
+     ('TG0014','Kawidu proboth','kawidu7@gmail.com','0702080962','200038513900','D04','TMS1210'),
+     ('TG0015','Tharaka hansana','tharaka9@gmail.com','0114090672','199970915672','D04','TMS1222'),
+     ('TG0016','Rajitha lakshan','rajitha5@gmail.com','0904783991','200192815081','D04','TMS1212');
+
