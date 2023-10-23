@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------------------------
+TABLE course
+-------------------------------------------------------------------------------------------------
+
+
+CREATE TABLE course(
+    Crs_id VARCHAR(7) NOT NULL,
+    Name VARCHAR(40) NOT NULL,
+    Type VARCHAR(10) NOT NULL,
+    Credit INT NOT NULL,
+    Dep_id CHAR(3) NOT NULL,
+    Lec_id CHAR(5) NOT NULL,
+    PRIMARY KEY(Crs_id)
+    );
+
+
+INSERT INTO course (Crs_id,Name,Type,Credit,Dep_id,Lec_id) VALUES
+    ('ICT1222','Network','Both',2,'D01','LE001'),
+    ('ICT1123','WEB','Both',3,'D01','LE009'),
+    ('ICT2112','JAVA','Theory',2,'D01','LE013'),
+    ('ICT2122','JAVA','Practical',2,'D01','LE013'),
+    ('ET1113','POM','Both',3,'D03','LE003'),
+    ('ET1222','C language','Practical',2,'D03','LE007'),
+    ('ET1212','C language','Theory',2,'D03','LE015'),
+    ('ET3112','EM','Both',2,'D03','LE011'),
+    ('BST1123','Organic Chemistry','Both',3,'D02','LE002'),
+    ('BST1222','Fisheries','Both',2,'D02','LE005'),
+    ('BST2131','Agriculture','Both',1,'D02','LE006'),
+    ('BST1233','Microbiology','Theory',3,'D02','LE010'),
+    ('TMS1223','Maths','Theory',3,'D04','LE012'),
+    ('TMS1210','English','Theory',0,'D04','LE004'),
+    ('TMS1222','Management','Theory',2,'D04','LE008'),
+    ('TMS1212','Economics','Theory',2,'D04','LE014');
+    ('TMS1212','Economics','Theory',2,'D04','LE014');
