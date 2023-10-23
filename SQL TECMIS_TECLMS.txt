@@ -174,7 +174,7 @@ INSERT INTO Assignment (Asm_id,Crs_id,Asm_no,Asm_mark,Std_id) VALUES
 ('A050','ET3112','AS004',3,'TG0012');
 
 -------------------------------------------------------------------------------------------------
-			TABLE mid_marks
+TABLE mid_marks
 -------------------------------------------------------------------------------------------------
 CREATE TABLE mid_marks(
     Mid_id CHAR(5),
@@ -205,7 +205,7 @@ INSERT INTO mid_marks (Mid_id, Crs_id, Mid_mark, Std_id) VALUES
 
 
 -------------------------------------------------------------------------------------------------
-			TABLE end_marks
+TABLE end_marks
 -------------------------------------------------------------------------------------------------	
 CREATE TABLE end_marks (
     End_id CHAR(5),
@@ -220,7 +220,7 @@ INSERT INTO end_marks (End_id,Crs_id,End_marks,Std_id) VALUES
     ('ED002','ICT1123',51,'TG0002'),
     ('ED003','ICT2112',NULL,'TG0003'),
     ('ED004','ICT2122',16,'TG0004'),
-    ('ED005','BST1123',39,'TG0005'),
+    ('ED005','BST1122',39,'TG0005'),
     ('ED006','BST1222',55,'TG0006'),
     ('ED007','BST2131',NULL,'TG0007'),
     ('ED008','BST1233',23,'TG0008'),
