@@ -16,7 +16,7 @@ INSERT INTO end_marks (End_id,Crs_id,End_marks,Std_id)
     ('ED002','ICT1123',51,'TG0002'),
     ('ED003','ICT2112',NULL,'TG0003'),
     ('ED004','ICT2122',16,'TG0004'),
-    ('ED005','BST1123',39,'TG0005'),
+    ('ED005','BST1122',39,'TG0005'),
     ('ED006','BST1222',55,'TG0006'),
     ('ED007','BST2131',NULL,'TG0007'),
     ('ED008','BST1233',23,'TG0008'),
