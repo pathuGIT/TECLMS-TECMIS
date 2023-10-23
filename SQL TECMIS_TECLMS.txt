@@ -71,11 +71,14 @@ INSERT INTO course (Crs_id,Name,Type,Credit,Dep_id,Lec_id) VALUES
     ('TMS1222','Management','Theory',2,'D04','LE008'),
     ('TMS1212','Economics','Theory',2,'D04','LE014');
 
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0013';
+UPDATE student SET Dep_id='D01' WHERE StD_id='TG0014';
+UPDATE student SET Dep_id='D02' WHERE StD_id='TG0015';
+UPDATE student SET Dep_id='D03' WHERE StD_id='TG0016';
+
 -----------------------------------------------------------------------------------------------------
 STUDENT TABLE
 -----------------------------------------------------------------------------------------------------
-
-
 CREATE TABLE student (
      Std_id CHAR(6) NOT NULL,
      Name VARCHAR(250),
@@ -88,8 +91,7 @@ CREATE TABLE student (
      PRIMARY KEY (Std_id)
 );
 
-INSERT INTO student (Std_id, Name, Email, Contact, NIC, Status, Dep_id, Crs_id)
-VALUES
+INSERT INTO student (Std_id, Name, Email, Contact, NIC, Status, Dep_id, Crs_id) VALUES
 ('TG0001', 'Dinesh kumara', 'dinesh1@gmail.com', '0123456789', '199615203041', 'Repeat', 'D01', 'ICT1222'),
 ('TG0002', 'Saman gunasena', 'saman98@gmail.com', '0792030768', '199856784551', 'Proper', 'D01', 'ICT1123'),
 ('TG0003', 'Gayani silva', 'gayani01@gmail.com', '0895678123', '199926458901', 'Proper', 'D01', 'ICT2112'),
@@ -106,3 +108,64 @@ VALUES
 ('TG0014', 'Kawidu proboth', 'kawidu7@gmail.com', '0702080962', '200038513900', 'Suspend', 'D04', 'TMS1210'),
 ('TG0015', 'Tharaka hansana', 'tharaka9@gmail.com', '0114090672', '199970915672', 'Repeat', 'D04', 'TMS1222'),
 ('TG0016', 'Rajitha lakshan', 'rajitha5@gmail.com', '0904783991', '200192815081', 'Proper', 'D04', 'TMS1212');
+
+
+-------------------------------------------------------------------------------------------------
+			TABLE mid_marks
+-------------------------------------------------------------------------------------------------
+CREATE TABLE mid_marks(
+    Mid_id CHAR(5),
+    Crs_id VARCHAR(7),
+    Mid_mark INT,
+    Std_id CHAR(6),
+    PRIMARY KEY (Mid_id)
+    );
+
+
+INSERT INTO mid_marks (Mid_id, Crs_id, Mid_mark, Std_id) VALUES
+    ('MD001', 'ICT1222', 17, 'TG0001'),
+    ('MD002', 'ICT1123', 24, 'TG0002'),
+    ('MD003', 'ICT2112', 6, 'TG0003'),
+    ('MD004', 'ICT2122', 15, 'TG0004'),
+    ('MD005', 'BST1123', 17, 'TG0005'),
+    ('MD006', 'BST1222', 24, 'TG0006'),
+    ('MD007', 'BST2131', 5, 'TG0007'),
+    ('MD008', 'BST1233', 15, 'TG0008'),
+    ('MD009', 'ET1113', NULL, 'TG0009'),
+    ('MD010', 'ET1222', 19, 'TG0010'),
+    ('MD011', 'ET1212', 7, 'TG0011'),
+    ('MD012', 'ET3112', 23, 'TG0012'),
+    ('MD013', 'TMS1123', 18, 'TG0013'),
+    ('MD014', 'TMS1210', NULL, 'TG0014'),
+    ('MD015', 'TMS1222', 7, 'TG0015'),
+    ('MD016', 'TMS1212', 19, 'TG0016');
+
+
+-------------------------------------------------------------------------------------------------
+			TABLE end_marks
+-------------------------------------------------------------------------------------------------	
+CREATE TABLE end_marks (
+    End_id CHAR(5),
+    Crs_id VARCHAR(7),
+    End_marks INT,
+    Std_id VARCHAR(6),
+    PRIMARY KEY (End_id)
+    );
+	
+INSERT INTO end_marks (End_id,Crs_id,End_marks,Std_id) VALUES
+    ('ED001','ICT1222',40,'TG0001'),
+    ('ED002','ICT1123',51,'TG0002'),
+    ('ED003','ICT2112',NULL,'TG0003'),
+    ('ED004','ICT2122',16,'TG0004'),
+    ('ED005','BST1123',39,'TG0005'),
+    ('ED006','BST1222',55,'TG0006'),
+    ('ED007','BST2131',NULL,'TG0007'),
+    ('ED008','BST1233',23,'TG0008'),
+    ('ED009','ET1113',NULL,'TG0009'),
+    ('ED010','ET1222',34,'TG0010'),
+    ('ED011','ET1212',NULL,'TG0011'),
+    ('ED012','ET3112',52,'TG0012'),
+    ('ED013','TMS1123',45,'TG0013'),
+    ('ED014','TMS1210',NULL,'TG0014'),
+    ('ED015','TMS1222',NULL,'TG0015'),
+    ('ED016','TMS1212',37,'TG0016');
