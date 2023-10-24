@@ -1,0 +1,25 @@
+//Create Short_assignment_mark
+create view Short_assignment_mark as select count(Crs_id) as count_of_ass,Crs_id,Std_id,sum(Asm_mark) as total_mark from assignment group by Std_id,Crs_id order by Std_id asc;
+
+//Create Short_Quiz_mark
+create view Short_Quiz_mark as select count(Crs_id) as count_of_quiz,Crs_id,Std_id,sum(Qiz_mark) as total_mark from quiz group by Std_id,Crs_id order by Std_id asc;
+
+//Create foundation_of_mark
+create view foundation_of_mark as select a.Std_id,a.Crs_id,a.total_mark/4 as Ass_mark,q.total_mark as Quiz_mark,m.Mid_mark as Mid_mark,if((a.total_mark/4+q.total_mark+m.Mid_mark)>19,'Pass','Fail') as Ca_status,e.End_marks as End_mark,(a.total_mark/4+q.total_mark+m.Mid_mark+e.End_marks)as Total_marks from Short_assignment a,end_marks e,Short_quiz q,Mid_marks m where a.Std_id = e.Std_id and a.Std_id = q.Std_id and a.Std_id = m.Std_id;
+
+//Create Mark table
+CREATE VIEW Mark AS SELECT
+    Std_id,
+    Crs_id,
+    Ca_status,
+    Total_marks,
+    CASE
+        WHEN Total_marks >= 90 THEN 'A+'
+        WHEN Total_marks >= 80 THEN 'A'
+        WHEN Total_marks >= 70 THEN 'B'
+        WHEN Total_marks >= 60 THEN 'C'
+        WHEN Total_marks >= 50 THEN 'D'
+        ELSE 'F'
+    END AS Grade
+FROM
+    foundation_of_mark;
