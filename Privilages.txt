@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------------------------
+USER PRIVILAGES
+-------------------------------------------------------------------------------------------------
+
+FOR ADMIN
+-----------
+CREATE USER 'ADMIN'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'ADMIN'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+FOR DEAN 
+-----------
+CREATE USER 'DEAN'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'DEAN'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR lecturer 
+-----------
+CREATE USER 'LECTURER'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'LECTURER'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR DEAN 
+-----------
+CREATE USER 'TECNICAL_OFFICER'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.attendance TO 'LECTURER'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR STUDENT
+-----------
+CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT ON tecmis_teclms.foundation_of_mark TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.eligibility TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.mark TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.student_cgpa TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.student_sgpa TO 'STUDENT'@'localhost';
+FLUSH PRIVILEGES;
