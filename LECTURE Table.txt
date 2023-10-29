@@ -9,20 +9,11 @@ create table LECTURE (
 	Dep_id CHAR(3) NOT NULL,
 	PRIMARY KEY (Lec_id)
 );
-
 INSERT INTO LECTURE (Lec_id, Name, Email, Contact, Dep_id) VALUES
-    ('LE001', 'Saman Hewage', 'saman.hewage@gmail.com', '0123456789', 'D01'),
-    ('LE002', 'Nadee Kelum', 'kelumndee@gmail.com', '9876543210', 'D02'),
-    ('LE003', 'Saraswathi Nadan', 'saraswthinadn@gmail.com', '5551234567', 'D03'),
-    ('LE004', 'Kosala Gunarathna', 'kosalaguna@gmail.com', '8889876543', 'D04'),
-    ('LE005', 'David Wilson', 'davidwilson@gmail.com', '7772223333', 'D02'),
-    ('LE006', 'Suumya Nadeegama', 'saumya@gmail.com', '5559998888', 'D02'),
-    ('LE007', 'Darshana Peeris', 'peerisdn@gmail.com', '7778885555', 'D03'),
-    ('LE008', 'Rasanga Samarathunga', 'samarathunga@gmail.com', '1235558888', 'D04'),
-    ('LE009', 'Wasana Adikaram', 'wasanadikrm@gmail.com', '5556667777', 'D01'),
-    ('LE010', 'Lahiru Gamage', 'lahirugmge@gmail.com', '6667778888', 'D02'),
-    ('LE011', 'Danshka Muthukumara', 'muthukumara@gmail.com', '7771112222', 'D03'),
-    ('LE012', 'Oshan Sandaken', 'oshansandken@gmail.com', '1112223333', 'D04'),
-    ('LE013', 'Janu Arachchi', 'jachchi@example.com', '2223334444', 'D01'),
-    ('LE014', 'Mathisha Rangajeewa', 'rangajeewamthisa@gmail.com', '4445556666', 'D02'),
-    ('LE015', 'Bathiya Kelum', 'bathiyakelum@gmail.com', '6665554444', 'D03');
+    ('LE001', 'Ms.Hiranya', 'hiranya@gmail.com', '0123456789', 'D04'),
+    ('LE002', 'Mr.Nuwan', 'nuwan@gmail.com', '9876543210', 'D01'),
+    ('LE003', 'Ms.Rumeshika', 'rumeshika@gmail.com', '8889876543', 'D01'),
+    ('LE004', 'Ms.Nimesha', 'nimesha@gmail.com', '7772223333', 'D01'),
+    ('LE005', 'Ms.Chanduni', 'chanduni@gmail.com', '5559998888', 'D01'),
+    ('LE006', 'Ms.Nilanthi', 'nilanthi@gmail.com', '7778885555', 'D04'),
+    ('LE007', 'Mr.Harshan', 'harshana@gmail.com', '1235558888', 'D04');
