@@ -1,0 +1,45 @@
+
+DELIMITER //
+CREATE PROCEDURE view_Grades_for_student(IN sid CHAR(6))
+BEGIN
+select Std_id,Crs_id,Grade from mark where Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_All_Final_mark_for_student(IN sid CHAR(6))
+BEGIN
+select Std_id,Crs_id,Total_Mark from foundation_of_mark where Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_SGPA_CGPA_For_All()
+BEGIN
+SELECT 
+    s.Std_id,
+    s.SGPA, 
+    c.CGPA 
+FROM 
+    student_sgpa AS s 
+INNER JOIN student_cgpa AS c ON s.Std_id = c.Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_SGPA_CGPA_For_Student(IN sid CHAR(6))
+BEGIN
+SELECT 
+    s.Std_id,
+    s.SGPA, 
+    c.CGPA 
+FROM 
+    student_sgpa AS s 
+INNER JOIN student_cgpa AS c ON s.Std_id = c.Std_id
+WHERE s.Std_id = sid;
+END//
+DELIMITER ;
+
