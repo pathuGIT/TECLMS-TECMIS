@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------------------------
+Eligibility TABLE
+-------------------------------------------------------------------------------------------------
+
+CREATE VIEW ELIGIBILITY AS
+SELECT 
+    a.Std_id, 
+    a.Crs_id,
+    a.Count AS Total_Attendance,
+    f.CA_Mark,
+    if(a.Count>=12, 'YES', 'NO') AS 'Eligibility'
+FROM 
+    attendance AS a, 
+    FOUNDATION_OF_MARK AS f 
+WHERE 
+    a.Std_id = f.Std_id AND a.Crs_id = f.Crs_id;
