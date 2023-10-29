@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------------------------
+TABLE student_gpa
+-------------------------------------------------------------------------------------------------
+//Created a view for get grade points 
+
+CREATE VIEW course_grade_points_view AS
+SELECT
+    Std_id,
+    Crs_id,
+    CA_Status,
+    Total_mark,
+    Grade,
+    CASE
+        WHEN mark.Grade = 'A+' THEN 4.00
+        WHEN mark.Grade = 'A' THEN 4.00
+        WHEN mark.Grade = 'A-' THEN 3.70
+        WHEN mark.Grade = 'B+' THEN 3.30
+        WHEN mark.Grade = 'B' THEN 3.00
+        WHEN mark.Grade = 'B-' THEN 2.70
+        WHEN mark.Grade = 'C+' THEN 2.30
+        WHEN mark.Grade = 'C' THEN 2.00
+        WHEN mark.Grade = 'D+' THEN 1.30
+        WHEN mark.Grade = 'D' THEN 1.00
+        ELSE 0.00
+    END AS Course_grade_point
+FROM mark;
+
+-----------------------------------------------------------------------------------------
+//CREATE VIEW FOR SGPA
+-----------------------------------------------------------------------------------------
+
+CREATE VIEW STUDENT_SGPA AS
+SELECT 
+    a.Std_id,
+    SUM(a.Course_grade_point * b.Credit)/sum(b.credit) AS SGPA
+FROM course_grade_points_view as a, course as b 
+WHERE a.Crs_id = b.Crs_id 
+GROUP BY Std_id;
+
+-----------------------------------------------------------------------------------------
+//CREATE VIEW FOR CGPA
+-----------------------------------------------------------------------------------------
+CREATE VIEW STUDENT_CGPA AS
+SELECT 
+    a.Std_id,
+    sum(a.Course_grade_point * b.Credit)/sum(b.credit) AS CGPA
+FROM 
+    course_grade_points_view as a, 
+    course as b 
+WHERE 
+    a.Crs_id = b.Crs_id AND a.Crs_id != 'ENG1222' 
+GROUP BY Std_id;
