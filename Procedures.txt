@@ -1,0 +1,38 @@
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_theory()
+BEGIN
+SELECT 
+    e.Std_id,
+    e.Crs_id,
+    CONCAT(Round((e.Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+    e.Eligibility 
+    FROM ELIGIBILITY as e 
+    INNER JOIN course as c on e.Crs_id = c.Crs_id 
+    WHERE c.Type = 'Theory' 
+    ORDER BY Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_practical()
+BEGIN
+SELECT 
+    e.Std_id,
+    e.Crs_id,
+    CONCAT(Round((e.Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+    e.Eligibility 
+    FROM ELIGIBILITY as e 
+    INNER JOIN course as c on e.Crs_id = c.Crs_id 
+    WHERE c.Type = 'practical' 
+    ORDER BY Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_all_CA_mark_for_cource(IN cid CHAR(7))
+BEGIN
+select Std_id,CA_Mark from foundation_of_mark where Crs_id = cid;
+END//
+DELIMITER ;
