@@ -1,0 +1,821 @@
+-----------------------------------------------------------------------------------------------------
+DEPARTMENT TABLE
+-----------------------------------------------------------------------------------------------------
+create table DEPARTMENT (
+	Dep_id CHAR(3) NOT NULL,
+	Name varchar(150) NOT NULL,
+	Lec_id CHAR(5) NOT NULL,
+	PRIMARY KEY (Dep_id)
+);
+INSERT INTO DEPARTMENT (Dep_id,Name,Lec_id) VALUES
+    ('D01','Information Ccommunication Technology','LE001'),
+    ('D02','Bio System Technology','LE005'),
+    ('D03','Engeneering Technology','LE003'),
+    ('D04','Multy Dicyplinary','LE004');
+
+-----------------------------------------------------------------------------------------------------
+LECTURE TABLE
+-----------------------------------------------------------------------------------------------------
+create table LECTURE (
+	Lec_id CHAR(5) NOT NULL,
+	Name varchar(250),
+	Email varchar(150),
+	Contact varchar(15),
+	Dep_id CHAR(3) NOT NULL,
+	PRIMARY KEY (Lec_id)
+);
+INSERT INTO LECTURE (Lec_id, Name, Email, Contact, Dep_id) VALUES
+    ('LE001', 'Ms.Hiranya', 'hiranya@gmail.com', '0123456789', 'D04'),
+    ('LE002', 'Mr.Nuwan', 'nuwan@gmail.com', '9876543210', 'D01'),
+    ('LE003', 'Ms.Rumeshika', 'rumeshika@gmail.com', '8889876543', 'D01'),
+    ('LE004', 'Ms.Nimesha', 'nimesha@gmail.com', '7772223333', 'D01'),
+    ('LE005', 'Ms.Chanduni', 'chanduni@gmail.com', '5559998888', 'D01'),
+    ('LE006', 'Ms.Nilanthi', 'nilanthi@gmail.com', '7778885555', 'D04'),
+    ('LE007', 'Mr.Harshan', 'harshana@gmail.com', '1235558888', 'D04');
+
+-----------------------------------------------------------------------------------------------------
+course table
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE course(
+    Crs_id VARCHAR(7) NOT NULL,
+    Name VARCHAR(40) NOT NULL,
+    Type VARCHAR(10) NOT NULL,
+    Credit INT NOT NULL,
+    Dep_id CHAR(3) NOT NULL,
+    Lec_id CHAR(5) NOT NULL,
+    PRIMARY KEY(Crs_id)
+);
+INSERT INTO COURSE (Crs_id,Name,Type,Credit,Dep_id,Lec_id) VALUES
+    ('ENG1222','English II','Theory',2,'D04','LE001'),
+    ('ICT1212','DBMS','Theory',2,'D01','LE002'),
+    ('ICT1222','DBMS','Practical',2,'D01','LE002'),
+    ('ICT1233','PHP','BOTH',3,'D01','LE003'),
+    ('ICT1242','Architecture','Theory',2,'D01','LE004'),
+    ('ICT1253','Networks','BOTH',2,'D01','LE005'),
+    ('TCS1212','Management','Theory',2,'D04','LE006'),
+    ('TMS1233','Discrete Math','Theory',3,'D04','LE007');
+
+-----------------------------------------------------------------------------------------------------
+student table
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE student (
+     Std_id CHAR(6) NOT NULL,
+     Name VARCHAR(250),
+     Email VARCHAR(150),
+     Contact VARCHAR(15),
+     NIC VARCHAR(12) NOT NULL,
+     Status VARCHAR(50),
+     Dep_id CHAR(3) NOT NULL,
+     PRIMARY KEY (Std_id)
+);
+
+INSERT INTO student (Std_id, Name, Email, Contact, NIC, Status, Dep_id) VALUES
+('TG0001', 'Dinesh kumara', 'dinesh1@gmail.com', '0123456789', '199615203041', 'Repeat', 'D01'),
+('TG0002', 'Saman gunasena', 'saman98@gmail.com', '0792030768', '199856784551', 'Repeat', 'D01'),
+('TG0003', 'Gayani silva', 'gayani01@gmail.com', '0895678123', '199926458901', 'Repeat', 'D01'),
+('TG0004', 'Kalana pathirana', 'kalana34@gmail.com', '0789000234', '200022300567', 'Repeat', 'D01'),
+('TG0005', 'Bagya prasadi', 'bagya45@gmail.com', '0993456812', '199789013455', 'Repeat', 'D01'),
+('TG0006', 'Avishka iduwara', 'avishka65@gmail.com', '0773456781', '199034567812', 'Proper', 'D01'),
+('TG0007', 'Anjana rangajeewa', 'anjana10@gmail.com', '0091234675', '188956872354', 'Proper', 'D01'),
+('TG0008', 'Pathum priyadarshana', 'pathum@gmail.com', '0715271000', '199826737891', 'Proper', 'D01'),
+('TG0009', 'Ishan kumuditha', 'ishan2@gmail.com', '0093784561', '200134568932', 'Proper', 'D01'),
+('TG0010', 'Sanidu piris', 'sanidu10@gmail.com', '0883246571', '200021347854', 'Proper', 'D01'),
+('TG0011', 'Ravidu heshan', 'ravidu5@gmail.com', '0873486723', '200234871267', 'Proper', 'D01'),
+('TG0012', 'Asela adikari', 'asela7@gmail.com', '0239867548', '200146834671', 'Proper', 'D01'),
+('TG0013', 'Sithila ravihara', 'sithila1@gmail.com', '0073485627', '200138472901', 'Proper', 'D01'),
+('TG0014', 'Kawidu proboth', 'kawidu7@gmail.com', '0702080962', '200038513900', 'Suspend', 'D01'),
+('TG0015', 'Tharaka hansana', 'tharaka9@gmail.com', '0114090672', '199970915672', 'Proper', 'D01');
+
+-----------------------------------------------------------------------------------------------------
+student_course table
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE student_course (
+    std_id CHAR(6) NOT NULL,
+    Crs_id VARCHAR(7) NOT NULL
+);
+
+INSERT INTO student_course (std_id, Crs_id) VALUES
+('TG0001', 'ENG1222'),
+('TG0001', 'ICT1212'),
+('TG0001', 'ICT1222'),
+('TG0001', 'ICT1233'),
+('TG0001', 'ICT1242'),
+('TG0001', 'ICT1253'),
+('TG0001', 'TCS1212'),
+('TG0001', 'TMS1233'),
+('TG0009', 'ENG1222'),
+('TG0009', 'ICT1212'),
+('TG0009', 'ICT1222'),
+('TG0009', 'ICT1233'),
+('TG0009', 'ICT1242'),
+('TG0009', 'ICT1253'),
+('TG0009', 'TCS1212'),
+('TG0009', 'TMS1233'),
+('TG0007', 'ENG1222'),
+('TG0007', 'ICT1212'),
+('TG0007', 'ICT1222'),
+('TG0007', 'ICT1233'),
+('TG0007', 'ICT1242'),
+('TG0007', 'ICT1253'),
+('TG0007', 'TCS1212'),
+('TG0007', 'TMS1233'),
+('TG0014', 'ENG1222'),
+('TG0014', 'ICT1212'),
+('TG0014', 'ICT1222'),
+('TG0014', 'ICT1233'),
+('TG0014', 'ICT1242'),
+('TG0014', 'ICT1253'),
+('TG0014', 'TCS1212'),
+('TG0014', 'TMS1233');
+
+-----------------------------------------------------------------------------------------------------
+ATTENDANCE TABLE
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE attendance(
+     A_id CHAR(4) NOT NULL,
+     Count CHAR(2) NOT NULL,
+     Std_id CHAR(6) NOT NULL,
+     Crs_id VARCHAR(7) NOT NULL,
+     PRIMARY KEY (A_id)
+     );
+
+INSERT INTO attendance (A_id,Count,Std_id,Crs_id) VALUES
+('A001','09','TG0001', 'ENG1222'),
+('A002','08','TG0001', 'ICT1212'),
+('A003','08','TG0001', 'ICT1222'),
+('A004','08','TG0001', 'ICT1233'),
+('A005','08','TG0001', 'ICT1242'),
+('A006','09','TG0001', 'ICT1253'),
+('A007','10','TG0001', 'TCS1212'),
+('A008','07','TG0001', 'TMS1233'),
+('A009','13','TG0009', 'ENG1222'),
+('A010','14','TG0009', 'ICT1212'),
+('A011','15','TG0009', 'ICT1222'),
+('A012','14','TG0009', 'ICT1233'),
+('A013','14','TG0009', 'ICT1242'),
+('A014','13','TG0009', 'ICT1253'),
+('A015','15','TG0009', 'TCS1212'),
+('A016','14','TG0009', 'TMS1233'),
+('A017','14','TG0007', 'ENG1222'),
+('A018','14','TG0007', 'ICT1212'),
+('A019','14','TG0007', 'ICT1222'),
+('A020','14','TG0007', 'ICT1233'),
+('A021','14','TG0007', 'ICT1242'),
+('A022','14','TG0007', 'ICT1253'),
+('A023','14','TG0007', 'TCS1212'),
+('A024','14','TG0007', 'TMS1233'),
+('A025','00','TG0014', 'ENG1222'),
+('A026','00','TG0014', 'ICT1212'),
+('A027','00','TG0014', 'ICT1222'),
+('A028','00','TG0014', 'ICT1233'),
+('A029','00','TG0014', 'ICT1242'),
+('A030','00','TG0014', 'ICT1253'),
+('A031','00','TG0014', 'TCS1212'),
+('A032','00','TG0014', 'TMS1233');
+
+
+-----------------------------------------------------------------------------------------------------
+ASSIGNMENT TABLE
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE assignment (
+    Asm_id CHAR(5) NOT NULL PRIMARY KEY,
+    Asm_no INT NOT NULL,
+    Asm_mark INT,
+    Std_id VARCHAR(6) NOT NULL,
+    Crs_id VARCHAR(7) NOT NULL 
+);
+
+INSERT INTO assignment (Asm_id,Asm_no,Asm_mark,Crs_id,Std_id) VALUES
+('AS001',1,0,'ENG1222','TG0001'),
+('AS002',2,1,'ENG1222','TG0001'),
+('AS003',1,2,'ICT1212','TG0001'),
+('AS004',2,3,'ICT1212','TG0001'),
+('AS005',1,3,'ICT1222','TG0001'),
+('AS006',2,2,'ICT1222','TG0001'),
+('AS007',1,4,'ICT1233','TG0001'),
+('AS008',2,1,'ICT1233','TG0001'),
+('AS009',1,NULL,'ICT1242','TG0001'),
+('AS010',2,3,'ICT1242','TG0001'),
+('AS011',1,2,'ICT1253','TG0001'),
+('AS012',2,1,'ICT1253','TG0001'),
+('AS013',1,0,'TCS1212','TG0001'),
+('AS014',2,0,'TCS1212','TG0001'),
+('AS015',1,2,'TMS1233','TG0001'),
+('AS016',2,1,'TMS1233','TG0001'),
+('AS017',1,4,'ENG1222','TG0007'),
+('AS018',2,5,'ENG1222','TG0007'),
+('AS019',1,3,'ICT1212','TG0007'),
+('AS020',2,5,'ICT1212','TG0007'),
+('AS021',1,4,'ICT1222','TG0007'),
+('AS022',2,5,'ICT1222','TG0007'),
+('AS023',1,4,'ICT1233','TG0007'),
+('AS024',2,4,'ICT1233','TG0007'),
+('AS025',1,5,'ICT1242','TG0007'),
+('AS026',2,3,'ICT1242','TG0007'),
+('AS027',1,4,'ICT1253','TG0007'),
+('AS028',2,4,'ICT1253','TG0007'),
+('AS029',1,4,'TCS1212','TG0007'),
+('AS030',2,5,'TCS1212','TG0007'),
+('AS031',1,3,'TMS1233','TG0007'),
+('AS032',2,5,'TMS1233','TG0007'),
+('AS033',1,NULL,'ENG1222','TG0014'),
+('AS034',2,NULL,'ENG1222','TG0014'),
+('AS035',1,NULL,'ICT1212','TG0014'),
+('AS036',2,NULL,'ICT1212','TG0014'),
+('AS037',1,NULL,'ICT1222','TG0014'),
+('AS038',2,NULL,'ICT1222','TG0014'),
+('AS039',1,NULL,'ICT1233','TG0014'),
+('AS040',2,NULL,'ICT1233','TG0014'),
+('AS041',1,NULL,'ICT1242','TG0014'),
+('AS042',2,NULL,'ICT1242','TG0014'),
+('AS043',1,NULL,'ICT1253','TG0014'),
+('AS044',2,NULL,'ICT1253','TG0014'),
+('AS045',1,NULL,'TCS1212','TG0014'),
+('AS046',2,NULL,'TCS1212','TG0014'),
+('AS047',1,NULL,'TMS1233','TG0014'),
+('AS048',2,NULL,'TMS1233','TG0014'),
+('AS049',1,5,'ENG1222','TG0009'),
+('AS050',2,5,'ENG1222','TG0009'),
+('AS051',1,4,'ICT1212','TG0009'),
+('AS052',2,3,'ICT1212','TG0009'),
+('AS053',1,5,'ICT1222','TG0009'),
+('AS054',2,3,'ICT1222','TG0009'),
+('AS055',1,4,'ICT1233','TG0009'),
+('AS056',2,4,'ICT1233','TG0009'),
+('AS057',1,3,'ICT1242','TG0009'),
+('AS058',2,5,'ICT1242','TG0009'),
+('AS059',1,4,'ICT1253','TG0009'),
+('AS060',2,3,'ICT1253','TG0009'),
+('AS061',1,5,'TCS1212','TG0009'),
+('AS062',2,3,'TCS1212','TG0009'),
+('AS063',1,4,'TMS1233','TG0009'),
+('AS064',2,4,'TMS1233','TG0009');
+
+-----------------------------------------------------------------------------------------------------
+QUIZ TABLE
+-----------------------------------------------------------------------------------------------------
+CREATE TABLE quiz(
+         Quiz_id CHAR(4) NOT NULL PRIMARY KEY,
+         Qiz_no INT NOT NULL,
+         Qiz_mark INT,
+         Std_id VARCHAR(6) NOT NULL,
+         Crs_id VARCHAR(7) NOT NULL
+     );
+
+INSERT INTO quiz (Quiz_id, Qiz_no, Qiz_mark, Std_id, Crs_id)
+     VALUES
+     ('Q001', 1, 2, 'TG0001', 'ENG1222'),
+     ('Q002', 2, 1, 'TG0001', 'ENG1222'),
+     ('Q003', 1, 3, 'TG0001', 'ICT1212'),
+     ('Q004', 2, 0, 'TG0001', 'ICT1212'),
+     ('Q005', 1, 1, 'TG0001', 'ICT1222'),
+     ('Q006', 2, 3, 'TG0001', 'ICT1222'),
+     ('Q007', 1, 2, 'TG0001', 'ICT1233'),
+     ('Q008', 2, 0, 'TG0001', 'ICT1233'),
+     ('Q009', 1, 0, 'TG0001', 'ICT1242'),
+     ('Q010', 2, 2, 'TG0001', 'ICT1242'),
+     ('Q011', 1, 2, 'TG0001', 'ICT1253'),
+     ('Q012', 2, 1, 'TG0001', 'ICT1253'),
+     ('Q013', 1, 1, 'TG0001', 'TCS1212'),
+     ('Q014', 2, 1, 'TG0001', 'TCS1212'),
+     ('Q015', 1, 0, 'TG0001', 'TMS1233'),
+     ('Q016', 2, 1, 'TG0001', 'TMS1233'),
+     ('Q017', 1, 4, 'TG0009', 'ENG1222'),
+     ('Q018', 2, 4, 'TG0009', 'ENG1222'),
+     ('Q019', 1, 3, 'TG0009', 'ICT1212'),
+     ('Q020', 2, 5, 'TG0009', 'ICT1212'),
+     ('Q021', 1, 4, 'TG0009', 'ICT1222'),
+     ('Q022', 2, 5, 'TG0009', 'ICT1222'),
+     ('Q023', 1, 5, 'TG0009', 'ICT1233'),
+     ('Q024', 2, 5, 'TG0009', 'ICT1233'),
+     ('Q025', 1, 5, 'TG0009', 'ICT1242'),
+     ('Q026', 2, 3, 'TG0009', 'ICT1242'),
+     ('Q027', 1, 4, 'TG0009', 'ICT1253'),
+     ('Q028', 2, 4, 'TG0009', 'ICT1253'),
+     ('Q029', 1, 5, 'TG0009', 'TCS1212'),
+     ('Q030', 2, 3, 'TG0009', 'TCS1212'),
+     ('Q031', 1, 5, 'TG0009', 'TMS1233'),
+     ('Q032', 2, 4, 'TG0009', 'TMS1233'),
+     ('Q033', 1, 3, 'TG0007', 'ENG1222'),
+     ('Q034', 2, 5, 'TG0007', 'ENG1222'),
+     ('Q035', 1, 3, 'TG0007', 'ICT1212'),
+     ('Q036', 2, 3, 'TG0007', 'ICT1212'),
+     ('Q037', 1, 5, 'TG0007', 'ICT1222'),
+     ('Q038', 2, 5, 'TG0007', 'ICT1222'),
+     ('Q039', 1, 3, 'TG0007', 'ICT1233'),
+     ('Q040', 2, 5, 'TG0007', 'ICT1233'),
+     ('Q041', 1, 4, 'TG0007', 'ICT1242'),
+     ('Q042', 2, 4, 'TG0007', 'ICT1242'),
+     ('Q043', 1, 3, 'TG0007', 'ICT1253'),
+     ('Q044', 2, 5, 'TG0007', 'ICT1253'),
+     ('Q045', 1, 5, 'TG0007', 'TCS1212'),
+     ('Q046', 2, 4, 'TG0007', 'TCS1212'),
+     ('Q047', 1, 3, 'TG0007', 'TMS1233'),
+     ('Q048', 2, 4, 'TG0007', 'TMS1233'),
+     ('Q049', 1, NULL, 'TG0014', 'ENG1222'),
+     ('Q050', 2, NULL, 'TG0014', 'ENG1222'),
+     ('Q051', 1, NULL, 'TG0014', 'ICT1212'),
+     ('Q052', 2, NULL, 'TG0014', 'ICT1212'),
+     ('Q053', 1, NULL, 'TG0014', 'ICT1222'),
+     ('Q054', 2, NULL, 'TG0014', 'ICT1222'),
+     ('Q055', 1, NULL, 'TG0014', 'ICT1233'),
+     ('Q056', 2, NULL, 'TG0014', 'ICT1233'),
+     ('Q057', 1, NULL, 'TG0014', 'ICT1242'),
+     ('Q058', 2, NULL, 'TG0014', 'ICT1242'),
+     ('Q059', 1, NULL, 'TG0014', 'ICT1253'),
+     ('Q060', 2, NULL, 'TG0014', 'ICT1253'),
+     ('Q061', 1, NULL, 'TG0014', 'TCS1212'),
+     ('Q062', 2, NULL, 'TG0014', 'TCS1212'),
+     ('Q063', 1, NULL, 'TG0014', 'TMS1233'),
+     ('Q064', 2, NULL, 'TG0014', 'TMS1233');
+
+-------------------------------------------------------------------------------------------------
+TABLE mid_marks
+-------------------------------------------------------------------------------------------------
+CREATE TABLE mid (
+    Mid_id CHAR(5) NOT NULL,
+    Crs_id VARCHAR(7) NOT NULL,
+    Mid_mark INT,
+    Std_id CHAR(6) NOT NULL,
+    PRIMARY KEY (Mid_id)
+);
+INSERT INTO mid (Mid_id, Crs_id, Mid_mark, Std_id) VALUES
+('MD001', 'ENG1222', 4, 'TG0001'),
+('MD002', 'ICT1212', 5, 'TG0001'),
+('MD003', 'ICT1222', 6, 'TG0001'),
+('MD004', 'ICT1233', 7, 'TG0001'),
+('MD005', 'ICT1242', 3, 'TG0001'),
+('MD006', 'ICT1253', 7, 'TG0001'),
+('MD007', 'TCS1212', 5, 'TG0001'),
+('MD008', 'TMS1233', 5, 'TG0001'),
+
+('MD009', 'ENG1222', 14, 'TG0007'),
+('MD010', 'ICT1212', 19, 'TG0007'),
+('MD011', 'ICT1222', 18, 'TG0007'),
+('MD012', 'ICT1233', 18, 'TG0007'),
+('MD013', 'ICT1242', 24, 'TG0007'),
+('MD014', 'ICT1253', 23, 'TG0007'),
+('MD015', 'TCS1212', 22, 'TG0007'),
+('MD016', 'TMS1233', 21, 'TG0007'),
+
+('MD017', 'ENG1222', 21, 'TG0009'),
+('MD018', 'ICT1212', 22, 'TG0009'),
+('MD019', 'ICT1222', 15, 'TG0009'),
+('MD020', 'ICT1233', 20, 'TG0009'),
+('MD021', 'ICT1242', 21, 'TG0009'),
+('MD022', 'ICT1253', 23, 'TG0009'),
+('MD023', 'TCS1212', 19, 'TG0009'),
+('MD024', 'TMS1233', 22, 'TG0009'),
+
+('MD025', 'ENG1222', 0, 'TG0014'),
+('MD026', 'ICT1212', 0, 'TG0014'),
+('MD027', 'ICT1222', 0, 'TG0014'),
+('MD028', 'ICT1233', 0, 'TG0014'),
+('MD029', 'ICT1242', 0, 'TG0014'),
+('MD030', 'ICT1253', 0, 'TG0014'),
+('MD031', 'TCS1212', 0, 'TG0014'),
+('MD032', 'TMS1233', 0, 'TG0014');
+
+-------------------------------------------------------------------------------------------------
+TABLE end_marks
+-------------------------------------------------------------------------------------------------	
+CREATE TABLE end(
+	End_id CHAR(5) NOT NULL,
+	Crs_id VARCHAR(7) NOT NULL,
+	End_marks INT,
+	Std_id CHAR(6) NOT NULL,
+	PRIMARY KEY (End_id)
+);
+INSERT INTO end (End_id, Crs_id, End_marks, Std_id) VALUES
+('EN001', 'ENG1222', 0, 'TG0001'),
+('EN002', 'ICT1212', 0, 'TG0001'),
+('EN003', 'ICT1222', 0, 'TG0001'),
+('EN004', 'ICT1233', 0, 'TG0001'),
+('EN005', 'ICT1242', 0, 'TG0001'),
+('EN006', 'ICT1253', 0, 'TG0001'),
+('EN007', 'TCS1212', 0, 'TG0001'),
+('EN008', 'TMS1233', 0, 'TG0001'),
+
+('EN009', 'ENG1222', 42, 'TG0007'),
+('EN010', 'ICT1212', 38, 'TG0007'),
+('EN011', 'ICT1222', 40, 'TG0007'),
+('EN012', 'ICT1233', 45, 'TG0007'),
+('EN013', 'ICT1242', 54, 'TG0007'),
+('EN014', 'ICT1253', 53, 'TG0007'),
+('EN015', 'TCS1212', 49, 'TG0007'),
+('EN016', 'TMS1233', 45, 'TG0007'),
+
+('EN017', 'ENG1222', 51, 'TG0009'),
+('EN018', 'ICT1212', 42, 'TG0009'),
+('EN019', 'ICT1222', 45, 'TG0009'),
+('EN020', 'ICT1233', 50, 'TG0009'),
+('EN021', 'ICT1242', 51, 'TG0009'),
+('EN022', 'ICT1253', 53, 'TG0009'),
+('EN023', 'TCS1212', 39, 'TG0009'),
+('EN024', 'TMS1233', 42, 'TG0009'),
+
+('EN025', 'ENG1222', NULL, 'TG0014'),
+('EN026', 'ICT1212', NULL, 'TG0014'),
+('EN027', 'ICT1222', NULL, 'TG0014'),
+('EN028', 'ICT1233', NULL, 'TG0014'),
+('EN029', 'ICT1242', NULL, 'TG0014'),
+('EN030', 'ICT1253', NULL, 'TG0014'),
+('EN031', 'TCS1212', NULL, 'TG0014'),
+('EN032', 'TMS1233', NULL, 'TG0014');
+
+
+-------------------------------------------------------------------------------------------------
+TABLE Mark
+-------------------------------------------------------------------------------------------------
+
+//Create VIEW SM_NO_1_QUIZ where Asm_no = 1
+ CREATE VIEW ASM_NO_1_QUIZ AS
+ SELECT * FROM assignment
+ WHERE Asm_no = 1;
+
+//Create VIEW SM_NO_2_QUIZ where Asm_no = 2
+ CREATE VIEW ASM_NO_2_QUIZ AS
+ SELECT * FROM assignment
+ WHERE Asm_no = 2;
+
+//Create view ASSIGNMENT_MAX_MARK
+CREATE VIEW ASSIGNMENT_MAX_MARK AS
+ SELECT
+    IF(a.Asm_mark >= b.Asm_mark, a.Asm_mark, b.Asm_mark) AS Max_Mark,
+    a.Std_id,
+    a.Crs_id
+ FROM ASM_NO_1_QUIZ AS a, ASM_NO_2_QUIZ AS b
+ WHERE a.Std_id = b.Std_id AND a.Crs_id = b.Crs_id;
+
+//Create view Qiz_no_1_Result
+ Create view Qiz_no_1_Result AS
+ select * from quiz where Qiz_no = 1;
+
+//Create Qiz_no_2_Result
+ Create view Qiz_no_2_Result AS
+ select * from quiz where Qiz_no = 2;
+
+//Create view SUM_OF_QUIZ_MARK
+Create view Quiz_Mark_of_sum AS
+ select
+   (a.Qiz_mark + b.Qiz_mark) AS Quiz_mark,
+   a.Std_id,
+   a.Crs_id
+ from qiz_no_1_result AS a, qiz_no_2_result AS b
+ WHERE a.Std_id = b.Std_id AND a.Crs_id = b.Crs_id;
+
+
+//CREATE VIEW FOUNDATION_OF_MARK
+CREATE VIEW FOUNDATION_OF_MARK AS
+ SELECT
+     a.Max_Mark as Assignment_mark,
+     q.Quiz_mark,
+     m.Mid_mark,
+     (a.Max_Mark + q.Quiz_mark + m.Mid_mark) AS CA_Mark,
+     IF((a.Max_Mark + q.Quiz_mark + m.Mid_mark)>19, 'Pass','Fail') AS CA_Status,
+     e.End_marks,
+     (a.Max_Mark + q.Quiz_mark + m.Mid_mark + e.End_marks) AS Total_Mark,
+     e.Std_id,
+     e.Crs_id
+     FROM
+      assignment_max_mark AS a,
+      quiz_mark_of_sum AS q,
+      mid AS m,
+      end AS e
+     WHERE
+      a.Crs_id = q.Crs_id AND a.Crs_id = m.Crs_id AND a.Crs_id = e.Crs_id AND
+      q.Crs_id = a.Crs_id AND q.Crs_id = m.Crs_id AND q.Crs_id = e.Crs_id AND
+      m.Crs_id = a.Crs_id AND m.Crs_id = q.Crs_id AND m.Crs_id = e.Crs_id AND
+      e.Crs_id = a.Crs_id AND e.Crs_id = q.Crs_id AND e.Crs_id = m.Crs_id AND
+      a.Std_id = q.Std_id AND a.Std_id = m.Std_id AND a.Std_id = e.Std_id AND
+      q.Std_id = a.Std_id AND q.Std_id = m.Std_id AND q.Std_id = e.Std_id AND
+      m.Std_id = a.Std_id AND m.Std_id = q.Std_id AND m.Std_id = e.Std_id AND
+      e.Std_id = a.Std_id AND e.Std_id = q.Std_id AND e.Std_id = m.Std_id;
+
+//CREATE VIEW MARK
+CREATE VIEW MARK AS
+SELECT
+    Std_id,
+    Crs_id,
+    CA_Status,
+    Total_Mark,
+    CASE
+        WHEN Total_Mark >= 90 THEN 'A+'
+        WHEN Total_Mark >= 84 THEN 'A'
+        WHEN Total_Mark >= 75 THEN 'A-'
+        WHEN Total_Mark >= 70 THEN 'B+'
+        WHEN Total_Mark >= 65 THEN 'B'
+        WHEN Total_Mark >= 60 THEN 'B-'
+        WHEN Total_Mark >= 55 THEN 'C+'
+        WHEN Total_Mark >= 50 THEN 'C'
+        WHEN Total_Mark >= 45 THEN 'C-'
+        WHEN Total_Mark >= 40 THEN 'D+'
+        WHEN Total_Mark >= 35 THEN 'D'
+        ELSE 'F'
+    END AS Grade
+FROM
+    FOUNDATION_OF_MARK;
+
+
+-------------------------------------------------------------------------------------------------
+TABLE student_gpa
+-------------------------------------------------------------------------------------------------
+//Created a view for get grade points 
+
+
+CREATE VIEW course_grade_points_view AS
+SELECT
+    Std_id,
+    Crs_id,
+    CA_Status,
+    Total_mark,
+    Grade,
+    CASE
+        WHEN mark.Grade = 'A+' THEN 4.00
+        WHEN mark.Grade = 'A' THEN 4.00
+        WHEN mark.Grade = 'A-' THEN 3.70
+        WHEN mark.Grade = 'B+' THEN 3.30
+        WHEN mark.Grade = 'B' THEN 3.00
+        WHEN mark.Grade = 'B-' THEN 2.70
+        WHEN mark.Grade = 'C+' THEN 2.30
+        WHEN mark.Grade = 'C' THEN 2.00
+        WHEN mark.Grade = 'D+' THEN 1.30
+        WHEN mark.Grade = 'D' THEN 1.00
+        ELSE 0.00
+    END AS Course_grade_point
+FROM mark;
+
+
+//CREATE VIEW FOR SGPA
+CREATE VIEW STUDENT_SGPA AS
+SELECT 
+    a.Std_id,
+    SUM(a.Course_grade_point * b.Credit)/sum(b.credit) AS SGPA
+FROM course_grade_points_view as a, course as b 
+WHERE a.Crs_id = b.Crs_id 
+GROUP BY Std_id;
+
+
+//CREATE VIEW FOR CGPA
+CREATE VIEW STUDENT_CGPA AS
+SELECT 
+    a.Std_id,
+    sum(a.Course_grade_point * b.Credit)/sum(b.credit) AS CGPA
+FROM 
+    course_grade_points_view as a, 
+    course as b 
+WHERE 
+    a.Crs_id = b.Crs_id AND a.Crs_id != 'ENG1222' 
+GROUP BY Std_id;
+
+
+-------------------------------------------------------------------------------------------------
+TABLE eligibility
+-------------------------------------------------------------------------------------------------
+
+CREATE VIEW ELIGIBILITY AS
+SELECT 
+    a.Std_id, 
+    a.Crs_id,
+    a.Count AS Total_Attendance,
+    f.CA_Mark,
+    if(a.Count>=12, 'YES', 'NO') AS 'Eligibility'
+FROM 
+    attendance AS a, 
+    FOUNDATION_OF_MARK AS f 
+WHERE 
+    a.Std_id = f.Std_id AND a.Crs_id = f.Crs_id;
+
+
+-------------------------------------------------------------------------------------------------
+FOREIGN KEY
+-------------------------------------------------------------------------------------------------
+ALTER TABLE assignment ADD FOREIGN KEY(Std_id) REFERENCES student(Std_id);
+ALTER TABLE assignment ADD FOREIGN KEY(Crs_id) REFERENCES course(Crs_id);
+ALTER TABLE attendance ADD FOREIGN KEY(Std_id) REFERENCES student(Std_id);
+ALTER TABLE attendance ADD FOREIGN KEY(Crs_id) REFERENCES course(Crs_id);
+ALTER TABLE course ADD FOREIGN KEY(Dep_id) REFERENCES department(Dep_id);
+ALTER TABLE course ADD FOREIGN KEY(Lec_id) REFERENCES lecture(Lec_id);
+ALTER TABLE department ADD FOREIGN KEY(Lec_id) REFERENCES lecture(Lec_id);
+ALTER TABLE end ADD FOREIGN KEY(Std_id) REFERENCES student(Std_id);
+ALTER TABLE end ADD FOREIGN KEY(Crs_id) REFERENCES course(Crs_id);
+ALTER TABLE lecture ADD FOREIGN KEY(Dep_id) REFERENCES department(Dep_id);
+ALTER TABLE mid ADD FOREIGN KEY(Std_id) REFERENCES student(Std_id);
+ALTER TABLE mid ADD FOREIGN KEY(Crs_id) REFERENCES course(Crs_id);
+ALTER TABLE quiz ADD FOREIGN KEY(Std_id) REFERENCES student(Std_id);
+ALTER TABLE quiz ADD FOREIGN KEY(Crs_id) REFERENCES course(Crs_id);
+ALTER TABLE student ADD FOREIGN KEY(Dep_id) REFERENCES department(Dep_id);
+
+
+-------------------------------------------------------------------------------------------------
+PROCEDURES
+-------------------------------------------------------------------------------------------------
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_subject()
+BEGIN
+SELECT
+  Crs_id,
+  CONCAT(Round((Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+  Eligibility
+FROM ELIGIBILITY;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_individualStd(IN id CHAR(6))
+BEGIN
+SELECT
+  Crs_id,
+  CONCAT(Round((Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+  Eligibility
+FROM ELIGIBILITY
+WHERE Std_id = id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_StudentCource(IN sid CHAR(6), IN cid CHAR(7))
+BEGIN
+  SELECT
+    Crs_id,
+    CONCAT(ROUND((Total_Attendance * 6.66), 2), '%') AS "Attendance",
+    Eligibility
+  FROM ELIGIBILITY
+  WHERE Std_id = sid AND Crs_id = cid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_theory()
+BEGIN
+SELECT 
+    e.Std_id,
+    e.Crs_id,
+    CONCAT(Round((e.Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+    e.Eligibility 
+    FROM ELIGIBILITY as e 
+    INNER JOIN course as c on e.Crs_id = c.Crs_id 
+    WHERE c.Type = 'Theory' 
+    ORDER BY Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_attendance_for_practical()
+BEGIN
+SELECT 
+    e.Std_id,
+    e.Crs_id,
+    CONCAT(Round((e.Total_Attendance * 6.66),2) ,'%') AS "Attendance",
+    e.Eligibility 
+    FROM ELIGIBILITY as e 
+    INNER JOIN course as c on e.Crs_id = c.Crs_id 
+    WHERE c.Type = 'practical' 
+    ORDER BY Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_all_CA_mark_for_cource(IN cid CHAR(7))
+BEGIN
+select Std_id,CA_Mark from foundation_of_mark where Crs_id = cid;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE view_CA_mark_for_CourceStudent(IN cid CHAR(7), IN sid CHAR(6))
+BEGIN
+select Std_id,CA_Mark from foundation_of_mark where Crs_id = cid AND Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_CA_mark_for_Student(IN sid CHAR(6))
+BEGIN
+select Crs_id,CA_Mark from foundation_of_mark where Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_Final_mark_for_All()
+BEGIN
+select Std_id,Crs_id,Total_Mark from foundation_of_mark;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_All_Final_mark_for_student(IN sid CHAR(6))
+BEGIN
+select Std_id,Crs_id,Total_Mark from foundation_of_mark where Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_All_Eligibile_student()
+BEGIN
+SELECT Std_id,Crs_id,Eligibility FROM eligibility;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE view_Grades_for_All()
+BEGIN
+select Std_id,Crs_id,Grade from mark ;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_Grades_for_student(IN sid CHAR(6))
+BEGIN
+select Std_id,Crs_id,Grade from mark where Std_id = sid;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_SGPA_CGPA_For_All()
+BEGIN
+SELECT 
+    s.Std_id,
+    s.SGPA, 
+    c.CGPA 
+FROM 
+    student_sgpa AS s 
+INNER JOIN student_cgpa AS c ON s.Std_id = c.Std_id;
+END//
+DELIMITER ;
+
+
+DELIMITER //
+CREATE PROCEDURE view_SGPA_CGPA_For_Student(IN sid CHAR(6))
+BEGIN
+SELECT 
+    s.Std_id,
+    s.SGPA, 
+    c.CGPA 
+FROM 
+    student_sgpa AS s 
+INNER JOIN student_cgpa AS c ON s.Std_id = c.Std_id
+WHERE s.Std_id = sid;
+END//
+DELIMITER ;
+
+
+-------------------------------------------------------------------------------------------------
+USER PRIVILAGES
+-------------------------------------------------------------------------------------------------
+
+FOR ADMIN
+-----------
+CREATE USER 'ADMIN'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'ADMIN'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+FOR DEAN 
+-----------
+CREATE USER 'DEAN'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'DEAN'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR DEAN 
+-----------
+CREATE USER 'LECTURER'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'LECTURER'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR DEAN 
+-----------
+CREATE USER 'TECNICAL_OFFICER'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.attendance TO 'LECTURER'@'localhost';
+FLUSH PRIVILEGES;
+
+
+FOR STUDENT
+-----------
+CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT ON tecmis_teclms.foundation_of_mark TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.eligibility TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.mark TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.student_cgpa TO 'STUDENT'@'localhost';
+GRANT SELECT ON tecmis_teclms.student_sgpa TO 'STUDENT'@'localhost';
+FLUSH PRIVILEGES;
+
+
+-------------------------------------------------------------------------------------------------
+GITHUB Link
+-------------------------------------------------------------------------------------------------
+https://github.com/pathuGIT/TECLMS-TECMIS
+-------------------------------------------------------------------------------------------------
