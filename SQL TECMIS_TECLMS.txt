@@ -586,6 +586,15 @@ FROM
 WHERE 
     a.Std_id = f.Std_id AND a.Crs_id = f.Crs_id;
 
+-------------------------------------------------------------------------------------------------
+TABLE notice
+-------------------------------------------------------------------------------------------------
+CREATE table notice(
+	nId int,
+	topic varchar(255),
+	notice varchar(255),
+	PRIMARY KEY(nId)
+);
 
 -------------------------------------------------------------------------------------------------
 FOREIGN KEY
@@ -784,35 +793,35 @@ FLUSH PRIVILEGES;
 
 FOR DEAN 
 -----------
-CREATE USER 'DEAN'@'localhost' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'DEAN'@'localhost';
-FLUSH PRIVILEGES;
-
-
-FOR DEAN 
------------
 CREATE USER 'LECTURER'@'localhost' IDENTIFIED BY '1234';
 GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'LECTURER'@'localhost';
 FLUSH PRIVILEGES;
 
-
-FOR DEAN 
+FOR TECHNICAL_OFFICER 
 -----------
-CREATE USER 'TECNICAL_OFFICER'@'localhost' IDENTIFIED BY '1234';
-GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.attendance TO 'LECTURER'@'localhost';
-FLUSH PRIVILEGES;
-
+GRANT INSERT,UPDATE,DELETE,SELECT ON tecmis_teclms.attendance TO 'TECNICAL_OFFICER'@'localhost';
+GRANT UPDATE,SELECT ON tecmis_teclms.student TO 'TECNICAL_OFFICER'@'localhost';
+GRANT SELECT ON tecmis_teclms.notice TO 'TECNICAL_OFFICER'@'localhost';
 
 FOR STUDENT
 -----------
 CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY '1234';
+GRANT SELECT ON tecmis_teclms.course TO 'STUDENT`@`localhost';
 GRANT SELECT ON tecmis_teclms.foundation_of_mark TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.eligibility TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.mark TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.student_cgpa TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.student_sgpa TO 'STUDENT'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.student TO 'STUDENT'@'localhost' WITH GRANT OPTION;
+GRANT SELECT ON tecmis_teclms.notice TO 'STUDENT'@'localhost';
 FLUSH PRIVILEGES;
 
+FOR LECTURER
+-----------
+CREATE USER 'LECTURER'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'LECTURER'@'localhost';
+GRANT SELECT ON tecmis_teclms.notice TO 'LECTURER'@'localhost';
+FLUSH PRIVILEGES;
 
 -------------------------------------------------------------------------------------------------
 GITHUB Link
