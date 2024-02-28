@@ -814,6 +814,8 @@ GRANT SELECT ON tecmis_teclms.student_cgpa TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.student_sgpa TO 'STUDENT'@'localhost';
 GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.student TO 'STUDENT'@'localhost' WITH GRANT OPTION;
 GRANT SELECT ON tecmis_teclms.notice TO 'STUDENT'@'localhost';
+GRANT  SELECT ON tecmis_teclms.department TO 'STUDENT'@'localhost';
+GRANT  SELECT ON tecmis_teclms.lecture TO 'STUDENT'@'localhost';
 FLUSH PRIVILEGES;
 
 FOR LECTURER
