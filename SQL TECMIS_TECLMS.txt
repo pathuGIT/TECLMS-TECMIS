@@ -793,15 +793,16 @@ FLUSH PRIVILEGES;
 
 FOR DEAN 
 -----------
-CREATE USER 'LECTURER'@'localhost' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'LECTURER'@'localhost';
+CREATE USER 'DEAN'@'localhost' IDENTIFIED BY '1234';
+GRANT ALL PRIVILEGES ON tecmis_teclms.* TO 'DEAN'@'localhost';
 FLUSH PRIVILEGES;
 
 FOR TECHNICAL_OFFICER 
 -----------
-GRANT INSERT,UPDATE,DELETE,SELECT ON tecmis_teclms.attendance TO 'TECNICAL_OFFICER'@'localhost';
-GRANT UPDATE,SELECT ON tecmis_teclms.student TO 'TECNICAL_OFFICER'@'localhost';
-GRANT SELECT ON tecmis_teclms.notice TO 'TECNICAL_OFFICER'@'localhost';
+CREATE USER 'TECHNICAL_OFFICER'@'localhost' IDENTIFIED BY '1234';
+GRANT INSERT,UPDATE,DELETE,SELECT ON tecmis_teclms.attendance TO 'TECHNICAL_OFFICER'@'localhost';
+GRANT UPDATE,SELECT ON tecmis_teclms.student TO 'TECHNICAL_OFFICER'@'localhost';
+GRANT SELECT ON tecmis_teclms.notice TO 'TECHNICAL_OFFICER'@'localhost';
 
 FOR STUDENT
 -----------
