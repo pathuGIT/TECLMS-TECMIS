@@ -596,6 +596,9 @@ CREATE table notice(
 	PRIMARY KEY(nId)
 );
 ALTER TABLE notice MODIFY COLUMN notice TEXT;
+ALTER TABLE notice
+MODIFY COLUMN nId INT AUTO_INCREMENT;
+
 
 -------------------------------------------------------------------------------------------------
 FOREIGN KEY
