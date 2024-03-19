@@ -598,6 +598,9 @@ CREATE table notice(
 ALTER TABLE notice MODIFY COLUMN notice TEXT;
 ALTER TABLE notice
 MODIFY COLUMN nId INT AUTO_INCREMENT;
+ALTER TABLE notice
+ADD COLUMN `date` DATE;
+
 
 
 -------------------------------------------------------------------------------------------------
