@@ -595,6 +595,7 @@ CREATE table notice(
 	notice varchar(255),
 	PRIMARY KEY(nId)
 );
+ALTER TABLE notice MODIFY COLUMN notice TEXT;
 
 -------------------------------------------------------------------------------------------------
 FOREIGN KEY
