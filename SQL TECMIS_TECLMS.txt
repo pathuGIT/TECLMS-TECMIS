@@ -824,6 +824,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON tecmis_teclms.student TO 'STUDENT'@'loca
 GRANT SELECT ON tecmis_teclms.notice TO 'STUDENT'@'localhost';
 GRANT  SELECT ON tecmis_teclms.department TO 'STUDENT'@'localhost';
 GRANT  SELECT ON tecmis_teclms.lecture TO 'STUDENT'@'localhost';
+GRANT  SELECT ON tecmis_teclms.attendance TO 'STUDENT'@'localhost';
 FLUSH PRIVILEGES;
 
 FOR LECTURER
