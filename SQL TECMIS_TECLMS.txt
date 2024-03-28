@@ -86,6 +86,29 @@ INSERT INTO student (Std_id, Name, Email, Contact, NIC, Status, Dep_id) VALUES
 ('TG0014', 'Kawidu proboth', 'kawidu7@gmail.com', '0702080962', '200038513900', 'Suspend', 'D01'),
 ('TG0015', 'Tharaka hansana', 'tharaka9@gmail.com', '0114090672', '199970915672', 'Proper', 'D01');
 
+
+//Update STUDENT table//
+ALTER TABLE student
+ADD COLUMN Password VARCHAR(50) AFTER NIC,
+ADD COLUMN Image VARCHAR(250) AFTER Dep_id;
+
+UPDATE student SET Password = '336ebe3a' WHERE Std_id = 'TG0001';
+UPDATE student SET Password = 'cedd1e06' WHERE Std_id = 'TG0002';
+UPDATE student SET Password = '30b842cc' WHERE Std_id = 'TG0003';
+UPDATE student SET Password = 'f262041d' WHERE Std_id = 'TG0004';
+UPDATE student SET Password = 'c8b2c1cf' WHERE Std_id = 'TG0005';
+UPDATE student SET Password = 'da52b5cb' WHERE Std_id = 'TG0006';
+UPDATE student SET Password = '4af10197' WHERE Std_id = 'TG0007';
+UPDATE student SET Password = '7ecbe35a' WHERE Std_id = 'TG0008';
+UPDATE student SET Password = 'daead1e1' WHERE Std_id = 'TG0009';
+UPDATE student SET Password = 'ac2f749a' WHERE Std_id = 'TG0010';
+UPDATE student SET Password = '64893247' WHERE Std_id = 'TG0011';
+UPDATE student SET Password = '1f2d1320' WHERE Std_id = 'TG0012';
+UPDATE student SET Password = 'b40e2baa' WHERE Std_id = 'TG0013';
+UPDATE student SET Image = 'img/podda.jpg' WHERE Std_id = 'TG0013';
+UPDATE student SET Password = '51a0bd2a' WHERE Std_id = 'TG0014';
+UPDATE student SET Password = '1709e512' WHERE Std_id = 'TG0015';
+
 -----------------------------------------------------------------------------------------------------
 student_course table
 -----------------------------------------------------------------------------------------------------
