@@ -814,7 +814,7 @@ GRANT SELECT ON tecmis_teclms.notice TO 'TECHNICAL_OFFICER'@'localhost';
 FOR STUDENT
 -----------
 CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY '1234';
-GRANT SELECT ON tecmis_teclms.course TO 'STUDENT`@`localhost';
+GRANT SELECT ON tecmis_teclms.course TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.foundation_of_mark TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.eligibility TO 'STUDENT'@'localhost';
 GRANT SELECT ON tecmis_teclms.mark TO 'STUDENT'@'localhost';
