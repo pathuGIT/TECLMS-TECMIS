@@ -624,6 +624,10 @@ MODIFY COLUMN nId INT AUTO_INCREMENT;
 ALTER TABLE notice
 ADD COLUMN `date` DATE;
 
+INSERT INTO notice (nId, topic, notice, date) VALUES
+(4, 'Holiday Announcement', 'The university will remain closed on Monday, March 25th, for the holiday.', '2024-03-25'),
+(5, 'Seminar Rescheduled', 'Due to unforeseen circumstances, the seminar scheduled for next week has been rescheduled to April 5th.', '2024-04-05'),
+(6, 'Library Closure', 'Please note that the library will be closed for maintenance from March 20th to March 22nd. We apologize for any inconvenience caused.', '2024-03-20');
 
 
 -------------------------------------------------------------------------------------------------
